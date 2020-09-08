@@ -118,4 +118,4 @@ It does look good in these 2 images, but there were some other issues not visibl
 ## Conclusion
 The Google summer of code was a great learning opportunity for me and a great way to get into open source. I am grateful for my mentors Martin Dobias and Peter Patrik for their help and guildance throughout the project. The community of QGIS is awesone and I would love to make more contributions in the future.
 
-I hugely recommend any students to apply to the GSoC program and I will most probably try to get into GSoC again next year.
+I hugely recommend any student to apply to the GSoC program and I will most probably try to get into GSoC again next year.
