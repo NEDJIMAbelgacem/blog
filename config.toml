@@ -1,4 +1,4 @@
-baseURL = "NEDJIMAbelgacem.github.io"
+baseURL = "https://NEDJIMAbelgacem.github.io"
 title   = "Belgacem Nedjima Blog"
 languageCode = "en-us"
 theme = "hello-friend-ng"

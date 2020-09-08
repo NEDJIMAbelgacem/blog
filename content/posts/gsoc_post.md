@@ -1,16 +1,16 @@
 +++
 categories = ["Programming", "GSoC"]
-date = "2020-09-8"
-description = "How I got into Google summer of code and how it"
-featured = "pic01.jpg"
+date = "2020-09-08"
+description = "How I got into Google summer of code and what I did"
 featuredalt = ""
 featuredpath = "date"
-linktitle = ""
+linktitle = "My GSoC journey"
 title = "My GSoC journey"
 slug = "My GSoC journey"
 type = "post"
 +++
-HI,
+
+Hi,
 
 With the Google summer of code final results out today (8 September 2020). I thought I should make a blog post my experience in Google Summer of Code project, how I got into the program, what I did and how it went. It was an amazing experience and I highly recommend any student to participate in the program.
 
