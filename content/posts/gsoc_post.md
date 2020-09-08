@@ -48,11 +48,11 @@ I didn't get to implement all the features I listed in my initial proposal but w
 ## Feature 1: Displaying textures on buildings
 Previously, QGIS users could only use Phong shading as materials for building geometries generated from vector layers. My goal was to make it possible to add texture images to the geometry of buildings. I started by reading the internal QGIS code and experimenting with Qt3D internals. First I experimented with just adding a texture on all triangles and got it working.
 
-![image](/gsoc_post_images/single_textured_materials.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574659/single_textured_materials_di73d1.png)
 
 Then I moved on to the separation between walls and roofs, I solved this problem by calculating the angle between each triangle’s normal and the horizontal plane, if that angle is small enough we consider that the triangle belongs to a wall, otherwise it’s a roof.
 
-![image](/gsoc_post_images/roof_and_walls_material.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574532/roof_and_walls_material_hozanj.png)
 
 For how the user interacts with the texturing and provides different texture for walls and roofs, I used the rule based rendering and added a combo box from which the user can specify which facade to render (meaning to render a wall or a roof). I also added some parameters to adjust the scale of the texture and its rotation.
 
@@ -65,21 +65,21 @@ QGIS 3D viewer already supports points lights which are quite simular to point l
 For the blender export I made a custom .obj files exporter. My implementation was quite tedious to implement because there were different types of layers and entities and I had to handle materials as well. I relied on extracting geometry information from the vertex buffer and the index buffer, making that work with DEM terrain, flat terrains and vector layers. For the materials I used the .mtl specification to export colors and textures. I added some UI to handle the resolution of texture and terrain.
 Here are some screenshots of what I was able to export:
 - Digital elevation model (DEM) terrain exported with .OBJ smoothing option on and off in Blender:
-![image](/gsoc_post_images/scene_export_smoothing.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574586/scene_export_smoothing_baoe8u.png)
 
 - Vector layer export:
-![image](/gsoc_post_images/scene_export_smoothing.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574584/scene_export_3_x9b4vj.png)
 
 - Exporting terrain texture (The texture image reflects the 2D image of the map and the user can specify the exporting resolution):
     - Blender:
-![image](/gsoc_post_images/terrain_blender.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574658/terrain_blender_mkptbt.png)
 
     - MeshLab:
-![image](/gsoc_post_images/terrain_meshLab.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574682/terrain_meshLab_azwis2.png)
 
 - Rule based rendering and material export in MeshLab:
-![image](/gsoc_post_images/vector_meshlab.png)
-![image](/gsoc_post_images/rule_based_renderer.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574658/vector_meshlab_xuo1ur.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574489/rule_based_renderer_ffsdqk.png)
 
 After the feature got merged into master, One of the core contriutors Nyall Dawson tweeted about my work and the community loved it ([Link to tweet](https://twitter.com/nyalldawson/status/1288986741462900738))
 
@@ -90,8 +90,8 @@ I introduced 2 ways of providing skyboxes :
 - 1 panoramic image: The user simply gives one panoramic image (like an .HDR image form https://hdrihaven.com/) and the renderer takes care of making the skybox.
 
 Here are some gifs of what I was able to make:
-![image](/gsoc_post_images/skybox1.gif)
-![image](/gsoc_post_images/skybox2.gif)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574676/skybox1_zv3oom.gif)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574647/skybox2_nlubeg.gif)
 
 After this feature was merged, I got a tweet about it from Tim Sutton, one of the most well know persons in the QGIS community ([link to tweet](https://twitter.com/timlinux/status/1296064098170544128)).
 
@@ -108,10 +108,10 @@ After that I tried implementing the shadow rendering but using a static light ca
 
 Here are some screenshots of the implementation at the time of writing the final report: 
 
-![image](/gsoc_post_images/shadows1.jpeg)
-![image](/gsoc_post_images/shadows2.jpeg)
-![image](/gsoc_post_images/good_shadows1.jpeg)
-![image](/gsoc_post_images/good_shadows2.jpeg)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574523/shadows1_fy1pej.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574518/shadows2_cmblau.png)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574495/good_shadows1_agfus7.jpg)
+![image](https://res.cloudinary.com/daqxkqlym/image/upload/v1599574493/good_shadows2_pcvxk8.jpg)
 
 It does look good in these 2 images, but there were some other issues not visible here like self shadowing and peter panning that were not visible here. These issues prevented me from completing the work in the coding period. Later I added parameters to reduce artifactes.
 
